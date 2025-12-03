@@ -9,6 +9,7 @@ class Opinion(db.Model):
     text = db.Column(db.Text, unique=True, nullable=False)
     source = db.Column(db.String(256))
     timestamp = db.Column(db.DateTime, index=True, default=datetime.now(UTC))
+    images = db.Column(db.JSON)
     added_by = db.Column(db.String(64))
 
     def to_dict(self):
